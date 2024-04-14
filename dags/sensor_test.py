@@ -8,7 +8,7 @@ from datetime import datetime
     tags=['aws'],
     catchup=False
 )
-def my_dag():
+def my_dag_sensor():
 
     wait_for_file = S3KeySensor(
         task_id="wait_for_file",
@@ -23,4 +23,4 @@ def my_dag():
 
     wait_for_file >> process_file()
 
-my_dag()
+my_dag_sensor()
